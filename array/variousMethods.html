@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>20181212</title>
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+
+
+</head>
+
+
+
+<body>
+    <div id="id"></div>
+    <div id="idd"></div>
+<script>
+    $(function(){
+   
+        //unshift: 앞에서부터 들어간다 shift: 앞에서부터 지운다
+        var arr = [];
+        arr.unshift('love', 'peace', 'warrier');
+        console.log(arr);
+        arr.unshift(['circle', 'student']); arr.unshift([1,3]);
+        console.log(arr);
+        arr.shift();
+        console.log(arr);
+        
+        
+        //toString : 모든 원소를 문자열로 변환.
+        console.log(arr.toString());
+        
+        //forEach : 배열이 있으면, 배열의 값과 인덱스 그리고 배열을 인자로 받아 각 값에 함수 수행.
+        arr.forEach(function(val, idx, arr){arr[idx] = val + ' is word.'; console.log(arr);});
+        
+        //forEach : 배열의 값만 활용할 수도 있다.
+        arr.forEach(function(val){ var text = ""; text += val; console.log(text);});
+        
+        //map : 배열의 값을 인자로 가지고 들어가 리턴값을 반환 여기서는 콘솔에 출력을 해봤다
+        arr.map(function(val){return console.log(val.substring(0,3));});
+        
+        
+        //filter : 빈 원소는 건너뛰고, 조건을 지난 원소의 값을 배열에 넣는다.
+        //배열의 값을 인자로 하여 적절치 않은 값을 없애주고, 있다면 경고하는 기능을 주었음.
+        var arr2 = new Array('       a', 'b   ', 1, 2, [3,{x:7, z:9}], ' ', arr2);
+        console.log(arr2);
+        arr2 = arr2.filter(function(val){ 
+            if(val != undefined && val != null){ return val;}
+            else{return alert('arr val has undefined or null');};     
+        });
+        console.log(arr2);
+        
+        //every : 모든 원소의 값에 대해 조건식을 충족할 때 true 반환
+        arr.every(function(val){ 
+            console.log(val.length+" "+val);
+            return val.length > 5});
+        
+        //some : 하나라도 조건에 맞는 값이 존재한다면 true 반환
+        arr.some(function(val){ return val.length > 20});
+        
+    });
+</script>
+    
+</body>
+</html>

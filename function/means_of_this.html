@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>20181213</title>
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+
+
+</head>
+
+
+
+<body>
+    <div id="id"></div>
+    <div id="idd"></div>
+<script>
+    $(function(){
+    
+        //indexOf:인자를 받는다. 인자가 배열에 있는지 없는지 검사한다.
+        var a = ['aa',1,2,'bb'];
+        console.log(a.indexOf('a')); console.log(a.indexOf('aa'));
+        
+        //객체를 활용해 메서드를 불러올 수 있다. 
+        var object = {
+            method: function(){
+                //이렇게 this를 변수에 담아두면, 중첩함수 내에서도 사용할 수 있게 된다.
+                var _this = this;                 
+                console.log(this === object); //여기와
+                
+                //헬퍼 함수를 호출할 수도 있다. 
+                func();
+                
+                function func(){
+                    console.log(this===object);
+                    console.log(_this===object) //여기를 보면 가리키는 객체가 같다.
+                }
+            }
+        }
+        
+        object.method();
+       
+    });
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>20181216</title>
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+
+
+</head>
+
+
+
+<body>
+    <div id="id"></div>
+    <div id="idd"></div>
+<script>
+    $(function(){
+   
+        function Func(age, name){
+          
+            this.age = age;
+            this.name = name;
+            
+            return r;
+        }
+        
+        Func.prototype = {
+            
+            defineage: function(){
+               return this.age + '살'; 
+            },
+            
+            definename: function(){
+            return this.name + '씨';
+            },
+            
+            toString: function(){return this.age+"살, "+this.name+'입니다.';}
+        }
+        
+        var r = new Func(27,'jake');
+        console.log(r.defineage()); console.log(r.definename());
+        console.log(r.toString()); console.log(r);
+        
+        
+    });
+</script>
+    
+</body>
+</html>

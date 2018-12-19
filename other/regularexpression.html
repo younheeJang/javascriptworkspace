@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>20181219</title>
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+
+
+</head>
+
+
+
+<body>
+    <div id="id"></div>
+    <div id="idd"></div>
+<script>
+    $(function(){
+    
+        var str = "i search you"
+        
+        //검색 문자열의 위치 반환 i:대소문자 구별없는 매칭 시도
+        var search = str.search(/search/i);
+        console.log(search);
+         
+       
+        //배열로 숫자와 문자인 숫자를 넣어 테스팅. 전역에 걸쳐 숫자만 출력.
+        var arr = [1, '2', 3];
+        
+        for(var i=0; i<arr.length; i++){
+            str += arr[i];
+        }
+        
+        //여기서 배열의 문자와 숫자가 123으로 통합되어 들어감을 알 수 있다.
+        console.log(str);
+        
+        var onlynum = str.match(/\d+/g);
+        console.log(onlynum);
+        
+        var onlynum2 ="";
+        for(var i=0; i<arr.length; i++){
+            onlynum2 += arr[i];
+        }
+        console.log(onlynum2);
+        
+        //www(먼저 챙기고), : 다음 역슬래시로 끊어 간다.
+        //\S는 유니코드 공백 문자가 아닌 모든 문자
+        var urlform = /(\w+):\/\/([\w.]+)\/(\S*)/;
+        var url = "https://blog.naver.com/edam0530";
+       
+        //지정한 정규식(폼)과 들어온 주소를 매치시킨다.
+        var match = url.match(urlform);
+        if(match != null){
+            var value00 = match[0];
+        }
+        console.log(value00); 
+        
+        //그럼, 변수 match에 들어있는 값을 알아본다.
+        var printall = "";
+        function printresult(match){
+            for(var i=0; i<match.length; i++){
+                printall += '|' + match[i];
+            }
+        return console.log(printall);
+        }
+        printresult(match);
+        
+        
+    });
+</script>
+    
+</body>
+</html>

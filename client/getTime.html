@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>20181223</title>
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+
+
+</head>
+
+
+
+<body>
+    <div id="id"></div>
+    <div id="idd"></div>
+<script>
+  
+    //window객체는 웹브라우저의 창 혹은 프레임워크.
+    
+    //location 프로퍼티 사용해 특정 웹페이지로 보낼 수 있다.
+    
+    //window.location = "https://blog.naver.com/edam0530/";
+    
+    //setTimeout메서드로 특정 시간 이후의 이벤트를 등록
+
+    //setTimeout(function(){alert('after 3s');}, 3000);
+    
+    
+    function getTime(){
+        var element = document.getElementById('id');
+        var time = new Date();
+        //toLocaleDateString : 데이트를 스트링으로 변환
+        element.innerHTML = time.toLocaleDateString();
+        setTimeout(getTime, 1000);
+    }
+    window.onload = getTime;
+</script>
+    
+</body>
+</html>
